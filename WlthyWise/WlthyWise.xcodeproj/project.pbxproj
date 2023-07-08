@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		466AB3B12A5A25A200AD6FAC /* WlthyWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3B02A5A25A200AD6FAC /* WlthyWiseApp.swift */; };
+		466AB3B32A5A25A200AD6FAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3B22A5A25A200AD6FAC /* ContentView.swift */; };
+		466AB3B52A5A25A700AD6FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466AB3B42A5A25A700AD6FAC /* Assets.xcassets */; };
+		466AB3B82A5A25A700AD6FAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466AB3B72A5A25A700AD6FAC /* Preview Assets.xcassets */; };
+		466AB3C22A5A25A700AD6FAC /* WlthyWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3C12A5A25A700AD6FAC /* WlthyWiseTests.swift */; };
+		466AB3CC2A5A25A700AD6FAC /* WlthyWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */; };
+		466AB3CE2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		466AB3BE2A5A25A700AD6FAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 466AB3A52A5A25A200AD6FAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466AB3AC2A5A25A200AD6FAC;
+			remoteInfo = WlthyWise;
+		};
+		466AB3C82A5A25A700AD6FAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 466AB3A52A5A25A200AD6FAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466AB3AC2A5A25A200AD6FAC;
+			remoteInfo = WlthyWise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		466AB3AD2A5A25A200AD6FAC /* WlthyWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WlthyWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		466AB3B02A5A25A200AD6FAC /* WlthyWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseApp.swift; sourceTree = "<group>"; };
+		466AB3B22A5A25A200AD6FAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		466AB3B42A5A25A700AD6FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		466AB3B72A5A25A700AD6FAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		466AB3BD2A5A25A700AD6FAC /* WlthyWiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WlthyWiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		466AB3C12A5A25A700AD6FAC /* WlthyWiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseTests.swift; sourceTree = "<group>"; };
+		466AB3C72A5A25A700AD6FAC /* WlthyWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WlthyWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseUITests.swift; sourceTree = "<group>"; };
+		466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		466AB3AA2A5A25A200AD6FAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3BA2A5A25A700AD6FAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3C42A5A25A700AD6FAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		466AB3A42A5A25A200AD6FAC = {
+			isa = PBXGroup;
+			children = (
+				466AB3AF2A5A25A200AD6FAC /* WlthyWise */,
+				466AB3C02A5A25A700AD6FAC /* WlthyWiseTests */,
+				466AB3CA2A5A25A700AD6FAC /* WlthyWiseUITests */,
+				466AB3AE2A5A25A200AD6FAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		466AB3AE2A5A25A200AD6FAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				466AB3AD2A5A25A200AD6FAC /* WlthyWise.app */,
+				466AB3BD2A5A25A700AD6FAC /* WlthyWiseTests.xctest */,
+				466AB3C72A5A25A700AD6FAC /* WlthyWiseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		466AB3AF2A5A25A200AD6FAC /* WlthyWise */ = {
+			isa = PBXGroup;
+			children = (
+				466AB3B02A5A25A200AD6FAC /* WlthyWiseApp.swift */,
+				466AB3B22A5A25A200AD6FAC /* ContentView.swift */,
+				466AB3B42A5A25A700AD6FAC /* Assets.xcassets */,
+				466AB3B62A5A25A700AD6FAC /* Preview Content */,
+			);
+			path = WlthyWise;
+			sourceTree = "<group>";
+		};
+		466AB3B62A5A25A700AD6FAC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				466AB3B72A5A25A700AD6FAC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		466AB3C02A5A25A700AD6FAC /* WlthyWiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				466AB3C12A5A25A700AD6FAC /* WlthyWiseTests.swift */,
+			);
+			path = WlthyWiseTests;
+			sourceTree = "<group>";
+		};
+		466AB3CA2A5A25A700AD6FAC /* WlthyWiseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */,
+				466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */,
+			);
+			path = WlthyWiseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		466AB3AC2A5A25A200AD6FAC /* WlthyWise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466AB3D12A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWise" */;
+			buildPhases = (
+				466AB3A92A5A25A200AD6FAC /* Sources */,
+				466AB3AA2A5A25A200AD6FAC /* Frameworks */,
+				466AB3AB2A5A25A200AD6FAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WlthyWise;
+			productName = WlthyWise;
+			productReference = 466AB3AD2A5A25A200AD6FAC /* WlthyWise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		466AB3BC2A5A25A700AD6FAC /* WlthyWiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466AB3D42A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWiseTests" */;
+			buildPhases = (
+				466AB3B92A5A25A700AD6FAC /* Sources */,
+				466AB3BA2A5A25A700AD6FAC /* Frameworks */,
+				466AB3BB2A5A25A700AD6FAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				466AB3BF2A5A25A700AD6FAC /* PBXTargetDependency */,
+			);
+			name = WlthyWiseTests;
+			productName = WlthyWiseTests;
+			productReference = 466AB3BD2A5A25A700AD6FAC /* WlthyWiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		466AB3C62A5A25A700AD6FAC /* WlthyWiseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466AB3D72A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWiseUITests" */;
+			buildPhases = (
+				466AB3C32A5A25A700AD6FAC /* Sources */,
+				466AB3C42A5A25A700AD6FAC /* Frameworks */,
+				466AB3C52A5A25A700AD6FAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				466AB3C92A5A25A700AD6FAC /* PBXTargetDependency */,
+			);
+			name = WlthyWiseUITests;
+			productName = WlthyWiseUITests;
+			productReference = 466AB3C72A5A25A700AD6FAC /* WlthyWiseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		466AB3A52A5A25A200AD6FAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					466AB3AC2A5A25A200AD6FAC = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					466AB3BC2A5A25A700AD6FAC = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 466AB3AC2A5A25A200AD6FAC;
+					};
+					466AB3C62A5A25A700AD6FAC = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 466AB3AC2A5A25A200AD6FAC;
+					};
+				};
+			};
+			buildConfigurationList = 466AB3A82A5A25A200AD6FAC /* Build configuration list for PBXProject "WlthyWise" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 466AB3A42A5A25A200AD6FAC;
+			productRefGroup = 466AB3AE2A5A25A200AD6FAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				466AB3AC2A5A25A200AD6FAC /* WlthyWise */,
+				466AB3BC2A5A25A700AD6FAC /* WlthyWiseTests */,
+				466AB3C62A5A25A700AD6FAC /* WlthyWiseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		466AB3AB2A5A25A200AD6FAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466AB3B82A5A25A700AD6FAC /* Preview Assets.xcassets in Resources */,
+				466AB3B52A5A25A700AD6FAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3BB2A5A25A700AD6FAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3C52A5A25A700AD6FAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		466AB3A92A5A25A200AD6FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466AB3B32A5A25A200AD6FAC /* ContentView.swift in Sources */,
+				466AB3B12A5A25A200AD6FAC /* WlthyWiseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3B92A5A25A700AD6FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466AB3C22A5A25A700AD6FAC /* WlthyWiseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466AB3C32A5A25A700AD6FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466AB3CC2A5A25A700AD6FAC /* WlthyWiseUITests.swift in Sources */,
+				466AB3CE2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		466AB3BF2A5A25A700AD6FAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466AB3AC2A5A25A200AD6FAC /* WlthyWise */;
+			targetProxy = 466AB3BE2A5A25A700AD6FAC /* PBXContainerItemProxy */;
+		};
+		466AB3C92A5A25A700AD6FAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466AB3AC2A5A25A200AD6FAC /* WlthyWise */;
+			targetProxy = 466AB3C82A5A25A700AD6FAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		466AB3CF2A5A25A700AD6FAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		466AB3D02A5A25A700AD6FAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		466AB3D22A5A25A700AD6FAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WlthyWise/Preview Content\"";
+				DEVELOPMENT_TEAM = 782725GYA8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		466AB3D32A5A25A700AD6FAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WlthyWise/Preview Content\"";
+				DEVELOPMENT_TEAM = 782725GYA8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		466AB3D52A5A25A700AD6FAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 782725GYA8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WlthyWise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WlthyWise";
+			};
+			name = Debug;
+		};
+		466AB3D62A5A25A700AD6FAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 782725GYA8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WlthyWise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WlthyWise";
+			};
+			name = Release;
+		};
+		466AB3D82A5A25A700AD6FAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 782725GYA8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WlthyWise;
+			};
+			name = Debug;
+		};
+		466AB3D92A5A25A700AD6FAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 782725GYA8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = beyondconfident.com.WlthyWiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WlthyWise;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		466AB3A82A5A25A200AD6FAC /* Build configuration list for PBXProject "WlthyWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466AB3CF2A5A25A700AD6FAC /* Debug */,
+				466AB3D02A5A25A700AD6FAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466AB3D12A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466AB3D22A5A25A700AD6FAC /* Debug */,
+				466AB3D32A5A25A700AD6FAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466AB3D42A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466AB3D52A5A25A700AD6FAC /* Debug */,
+				466AB3D62A5A25A700AD6FAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466AB3D72A5A25A700AD6FAC /* Build configuration list for PBXNativeTarget "WlthyWiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466AB3D82A5A25A700AD6FAC /* Debug */,
+				466AB3D92A5A25A700AD6FAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 466AB3A52A5A25A200AD6FAC /* Project object */;
+}
