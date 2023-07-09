@@ -14,8 +14,9 @@ struct CalculatorView: View {
     @State private var number2: String = ""
     @State private var numbers: [[String]] = []
     @State private var result: String = ""
+    @State private var resultColor: Color = .blue
     
-    private let authToken = ""
+    private let authToken = "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"
     
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
@@ -109,11 +110,11 @@ struct CalculatorView: View {
     
     func calculateProduct() {
         var product = 1
-        
+
         if let num1 = Int(number1), let num2 = Int(number2) {
             product *= num1 * num2
         }
-        
+
         for row in numbers {
             for numberString in row {
                 if let number = Int(numberString) {
@@ -121,22 +122,23 @@ struct CalculatorView: View {
                 }
             }
         }
-        
-        // Convert the product to a string
-        let calculation = "\(product)"
-        
-        // Send the calculation request to the OpenAI API
+
+        let calculation = "What is \(number1) * \(number2)?"
         let client = OpenAISwift(authToken: authToken)
-        client.sendCompletion(with: calculation, maxTokens: 1) { result in
+        
+        client.sendCompletion(with: calculation, maxTokens: 50) { result in
             switch result {
             case .success(let model):
                 let response = model.choices?.first?.text ?? ""
                 self.result = response
+                    //.foregroundColor(.red) // Update the result with red color
             case .failure(let error):
                 self.result = "Error: \(error.localizedDescription)"
+                  //  .foregroundColor(.red) // Display error message in red color
             }
         }
     }
+
 }
     
     
