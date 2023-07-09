@@ -86,6 +86,7 @@ struct CalculatorView: View {
         }
         
     }
+    
     func calculateProduct() {
         var product = 1
         
