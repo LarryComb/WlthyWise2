@@ -8,16 +8,14 @@
 import SwiftUI
 import OpenAISwift
 
-
 struct CalculatorView: View {
     @State private var number1: String = ""
     @State private var number2: String = ""
     @State private var numbers: [[String]] = []
     @State private var result: String = ""
-    @State private var resultColor: Color = .blue
+    @State private var isKeyboardVisible: Bool = false
     
-    private let authToken = "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"
-    
+    private let authToken = "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"
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
@@ -32,10 +30,16 @@ struct CalculatorView: View {
                     TextField("Credit Card 1", text: $number1)
                         .keyboardType(.numberPad)
                         .padding()
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                     
                     TextField("APR", text: $number2)
                         .keyboardType(.numberPad)
                         .padding()
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                 }
                 
                 ForEach(numbers.indices, id: \.self) { row in
@@ -44,10 +48,12 @@ struct CalculatorView: View {
                             TextField("Same as above \(row * 2 + column + 3)", text: $numbers[row][column])
                                 .keyboardType(.numberPad)
                                 .padding()
+                                .onTapGesture {
+                                    hideKeyboard()
+                                }
                         }
                     }
                 }
-                
                 
                 HStack {
                     Button(action: {
@@ -69,8 +75,6 @@ struct CalculatorView: View {
                     .padding()
                 }
                 
-                
-                
                 Button(action: {
                     calculateProduct()
                 }) {
@@ -82,10 +86,11 @@ struct CalculatorView: View {
                         .cornerRadius(10)
                 }
                 
-                
+                ScrollView{
                 Text("Months to Pay Off: \(result)")
                     .font(.title)
                     .padding()
+               }
                 
                 Toggle(isOn: $isDarkMode) {
                     Text("Dark Mode Setting")
@@ -94,9 +99,21 @@ struct CalculatorView: View {
             }
             .padding()
             .preferredColorScheme(isDarkMode ? .dark : .light)
+            .onTapGesture {
+                hideKeyboard()
+            }
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { _ in
+                    isKeyboardVisible = true
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                    isKeyboardVisible = false
+                }
+            }
         }
-        
     }
+    
     func addNumberField() {
         numbers.append(["", ""])
     }
@@ -107,23 +124,14 @@ struct CalculatorView: View {
         }
     }
     
-    
     func calculateProduct() {
         var product = 1
-
+        
         if let num1 = Int(number1), let num2 = Int(number2) {
             product *= num1 * num2
         }
-
-        for row in numbers {
-            for numberString in row {
-                if let number = Int(numberString) {
-                    product *= number
-                }
-            }
-        }
-
-        let calculation = "What is \(number1) * \(number2)?"
+        
+        let calculation = "If \(number1) is the amount of my credit card and \(number2) is my interest rate, how long will it take me to pay off the card?"
         let client = OpenAISwift(authToken: authToken)
         
         client.sendCompletion(with: calculation, maxTokens: 50) { result in
@@ -131,34 +139,35 @@ struct CalculatorView: View {
             case .success(let model):
                 let response = model.choices?.first?.text ?? ""
                 self.result = response
-                    //.foregroundColor(.red) // Update the result with red color
             case .failure(let error):
                 self.result = "Error: \(error.localizedDescription)"
-                  //  .foregroundColor(.red) // Display error message in red color
             }
         }
     }
-
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }
-    
-    
-    struct CalculatorView_Previews: PreviewProvider {
-        static var previews: some View {
-            CalculatorView()
-        }
+
+struct CalculatorView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalculatorView()
     }
-    
-    
-    
-    struct ContentView: View {
-        var body: some View {
-            CalculatorView()
-        }
+}
+
+struct ContentView: View {
+    var body: some View {
+        CalculatorView()
     }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
+}
+
+
+
 
