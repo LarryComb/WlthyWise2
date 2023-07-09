@@ -14,7 +14,7 @@
 		466AB3C22A5A25A700AD6FAC /* WlthyWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3C12A5A25A700AD6FAC /* WlthyWiseTests.swift */; };
 		466AB3CC2A5A25A700AD6FAC /* WlthyWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */; };
 		466AB3CE2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */; };
-		466AB3DC2A5A3F9B00AD6FAC /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */; };
+		466AB3E02A5B19DF00AD6FAC /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 466AB3DF2A5B19DF00AD6FAC /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,7 @@
 		466AB3C72A5A25A700AD6FAC /* WlthyWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WlthyWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseUITests.swift; sourceTree = "<group>"; };
 		466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlthyWiseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		466AB3DD2A5B19D700AD6FAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466AB3DC2A5A3F9B00AD6FAC /* OpenAISwift in Frameworks */,
+				466AB3E02A5B19DF00AD6FAC /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +81,7 @@
 				466AB3C02A5A25A700AD6FAC /* WlthyWiseTests */,
 				466AB3CA2A5A25A700AD6FAC /* WlthyWiseUITests */,
 				466AB3AE2A5A25A200AD6FAC /* Products */,
+				466AB3DE2A5B19DF00AD6FAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +98,7 @@
 		466AB3AF2A5A25A200AD6FAC /* WlthyWise */ = {
 			isa = PBXGroup;
 			children = (
+				466AB3DD2A5B19D700AD6FAC /* Info.plist */,
 				466AB3B02A5A25A200AD6FAC /* WlthyWiseApp.swift */,
 				466AB3B22A5A25A200AD6FAC /* ContentView.swift */,
 				466AB3B42A5A25A700AD6FAC /* Assets.xcassets */,
@@ -129,6 +132,13 @@
 			path = WlthyWiseUITests;
 			sourceTree = "<group>";
 		};
+		466AB3DE2A5B19DF00AD6FAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,7 +156,7 @@
 			);
 			name = WlthyWise;
 			packageProductDependencies = (
-				466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */,
+				466AB3DF2A5B19DF00AD6FAC /* OpenAISwift */,
 			);
 			productName = WlthyWise;
 			productReference = 466AB3AD2A5A25A200AD6FAC /* WlthyWise.app */;
@@ -428,6 +438,7 @@
 				DEVELOPMENT_TEAM = 782725GYA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WlthyWise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +468,7 @@
 				DEVELOPMENT_TEAM = 782725GYA8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WlthyWise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -604,7 +616,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */ = {
+		466AB3DF2A5B19DF00AD6FAC /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 466AB3DA2A5A3F9B00AD6FAC /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;

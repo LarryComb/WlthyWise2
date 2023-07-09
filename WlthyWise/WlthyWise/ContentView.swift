@@ -8,15 +8,18 @@
 import SwiftUI
 import OpenAISwift
 
+
 struct CalculatorView: View {
     @State private var number1: String = ""
     @State private var number2: String = ""
     @State private var numbers: [[String]] = []
     @State private var result: String = ""
     
+    private let authToken = ""
+    
+    
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
-    private let authToken = "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"
-
+    
     var body: some View {
         VStack {
             Text("WlthyWise")
@@ -33,9 +36,16 @@ struct CalculatorView: View {
                         .keyboardType(.numberPad)
                         .padding()
                 }
-            
                 
-
+                ForEach(numbers.indices, id: \.self) { row in
+                    HStack {
+                        ForEach(numbers[row].indices, id: \.self) { column in
+                            TextField("Same as above \(row * 2 + column + 3)", text: $numbers[row][column])
+                                .keyboardType(.numberPad)
+                                .padding()
+                        }
+                    }
+                }
                 
                 
                 HStack {
@@ -70,7 +80,7 @@ struct CalculatorView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-
+                
                 
                 Text("Months to Pay Off: \(result)")
                     .font(.title)
@@ -86,6 +96,16 @@ struct CalculatorView: View {
         }
         
     }
+    func addNumberField() {
+        numbers.append(["", ""])
+    }
+    
+    func removeNumberField() {
+        if !numbers.isEmpty {
+            numbers.removeLast()
+        }
+    }
+    
     
     func calculateProduct() {
         var product = 1
@@ -117,35 +137,8 @@ struct CalculatorView: View {
             }
         }
     }
-    func addNumberField() {
-        numbers.append(["", ""])
-    }
-    
-    func removeNumberField() {
-        if !numbers.isEmpty {
-            numbers.removeLast()
-        }
-    }
-    
-    
-    func calculateSum() {
-        var product = 1
-        if let num1 = Int(number1), let num2 = Int(number2) {
-            product *= num1 * num2
-        }
-        
-        for row in numbers {
-            for numberString in row {
-                if let number = Int(numberString) {
-                    product *= number
-                }
-            }
-        }
-        
-        result = "\(product)"
-    }
 }
-
+    
     
     struct CalculatorView_Previews: PreviewProvider {
         static var previews: some View {
@@ -166,3 +159,4 @@ struct CalculatorView: View {
             ContentView()
         }
     }
+
