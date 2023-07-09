@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAISwift
 
 struct CalculatorView: View {
     @State private var number1: String = ""
@@ -14,7 +15,8 @@ struct CalculatorView: View {
     @State private var result: String = ""
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
-    
+    private let authToken = "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"
+
     var body: some View {
         VStack {
             Text("WlthyWise")
@@ -31,16 +33,9 @@ struct CalculatorView: View {
                         .keyboardType(.numberPad)
                         .padding()
                 }
+            
                 
-                ForEach(numbers.indices, id: \.self) { row in
-                    HStack {
-                        ForEach(numbers[row].indices, id: \.self) { column in
-                            TextField("Same as above \(row * 2 + column + 3)", text: $numbers[row][column])
-                                .keyboardType(.numberPad)
-                                .padding()
-                        }
-                    }
-                }
+
                 
                 
                 HStack {
@@ -66,7 +61,7 @@ struct CalculatorView: View {
                 
                 
                 Button(action: {
-                    calculateSum()
+                    calculateProduct()
                 }) {
                     Text("Calculate")
                         .font(.headline)
@@ -75,6 +70,7 @@ struct CalculatorView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+
                 
                 Text("Months to Pay Off: \(result)")
                     .font(.title)
@@ -89,6 +85,36 @@ struct CalculatorView: View {
             .preferredColorScheme(isDarkMode ? .dark : .light)
         }
         
+    }
+    func calculateProduct() {
+        var product = 1
+        
+        if let num1 = Int(number1), let num2 = Int(number2) {
+            product *= num1 * num2
+        }
+        
+        for row in numbers {
+            for numberString in row {
+                if let number = Int(numberString) {
+                    product *= number
+                }
+            }
+        }
+        
+        // Convert the product to a string
+        let calculation = "\(product)"
+        
+        // Send the calculation request to the OpenAI API
+        let client = OpenAISwift(authToken: authToken)
+        client.sendCompletion(with: calculation, maxTokens: 1) { result in
+            switch result {
+            case .success(let model):
+                let response = model.choices?.first?.text ?? ""
+                self.result = response
+            case .failure(let error):
+                self.result = "Error: \(error.localizedDescription)"
+            }
+        }
     }
     func addNumberField() {
         numbers.append(["", ""])

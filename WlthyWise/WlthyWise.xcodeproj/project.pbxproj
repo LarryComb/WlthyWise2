@@ -14,6 +14,7 @@
 		466AB3C22A5A25A700AD6FAC /* WlthyWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3C12A5A25A700AD6FAC /* WlthyWiseTests.swift */; };
 		466AB3CC2A5A25A700AD6FAC /* WlthyWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CB2A5A25A700AD6FAC /* WlthyWiseUITests.swift */; };
 		466AB3CE2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AB3CD2A5A25A700AD6FAC /* WlthyWiseUITestsLaunchTests.swift */; };
+		466AB3DC2A5A3F9B00AD6FAC /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466AB3DC2A5A3F9B00AD6FAC /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = WlthyWise;
+			packageProductDependencies = (
+				466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */,
+			);
 			productName = WlthyWise;
 			productReference = 466AB3AD2A5A25A200AD6FAC /* WlthyWise.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 466AB3A42A5A25A200AD6FAC;
+			packageReferences = (
+				466AB3DA2A5A3F9B00AD6FAC /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 466AB3AE2A5A25A200AD6FAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		466AB3DA2A5A3F9B00AD6FAC /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		466AB3DB2A5A3F9B00AD6FAC /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 466AB3DA2A5A3F9B00AD6FAC /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 466AB3A52A5A25A200AD6FAC /* Project object */;
 }
