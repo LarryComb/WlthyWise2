@@ -15,7 +15,7 @@ struct CalculatorView: View {
     @State private var result: String = ""
     @State private var isKeyboardVisible: Bool = false
     
-    private let authToken = "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"
+    private let authToken = ""
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
@@ -131,7 +131,7 @@ struct CalculatorView: View {
             product *= num1 * num2
         }
         
-        let calculation = "If \(number1) is the amount of my credit card and \(number2) is my interest rate, how long will it take me to pay off the card?"
+        let calculation = "If \(number1) is the amount of my credit card and \(number2)% is my interest rate and I am making the mminimum payments, how long will it take me to pay off the card?"
         let client = OpenAISwift(authToken: authToken)
         
         client.sendCompletion(with: calculation, maxTokens: 50) { result in
