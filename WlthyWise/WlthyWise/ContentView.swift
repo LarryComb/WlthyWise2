@@ -19,6 +19,8 @@ struct CalculatorView: View {
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
+    
+    
     var body: some View {
         VStack {
             Text("WlthyWise")
@@ -87,10 +89,10 @@ struct CalculatorView: View {
                 }
                 
                 ScrollView{
-                Text("Months to Pay Off: \(result)")
-                    .font(.title)
-                    .padding()
-               }
+                    Text("How Long Pay Off: \(result)")
+                        .font(.title)
+                        .padding()
+                }
                 
                 Toggle(isOn: $isDarkMode) {
                     Text("Dark Mode Setting")
