@@ -15,7 +15,7 @@ struct CalculatorView: View {
     @State private var result: String = ""
     @State private var isKeyboardVisible: Bool = false
     
-    private let authToken = ""
+    private let authToken = "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"
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
