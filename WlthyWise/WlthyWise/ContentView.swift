@@ -19,7 +19,20 @@ struct CalculatorView: View {
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
-    
+    var totalLiabilities: Int {
+        var total = 0
+        if let num1 = Int(number1) {
+            total += num1
+        }
+        for row in numbers {
+            for column in row {
+                if let num = Int(column) {
+                    total += num
+                }
+            }
+        }
+        return total
+    }
     
     var body: some View {
         VStack {
@@ -87,6 +100,10 @@ struct CalculatorView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                
+                Text("Total Liabilities: \(totalLiabilities)")
+                    .font(.headline)
+                    .padding()
                 
                 ScrollView{
                     Text("How Long Pay Off: \(result)")
@@ -169,7 +186,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
-
