@@ -150,7 +150,7 @@ struct CalculatorView: View {
             product *= num1 * num2
         }
         
-        let calculation = "If \(number1) is the amount of my credit card and \(number2)% is my interest rate and I am making the mminimum payments, how long will it take me to pay off the card?"
+        let calculation = "If \(number1) is the amount of my credit card balance and \(number2)% is my interest rate of the same credit card and I am making the mminimum payments, how long will it take me to pay off the card?"
         let client = OpenAISwift(authToken: authToken)
         
         client.sendCompletion(with: calculation, maxTokens: 50) { result in
