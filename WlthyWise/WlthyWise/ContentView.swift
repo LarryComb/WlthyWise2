@@ -15,7 +15,8 @@ struct CalculatorView: View {
     @State private var numbers: [[String]] = []
     @State private var result: String = ""
     @State private var isKeyboardVisible: Bool = false
-    
+    @State private var highlightedSliceIndex: Int = 1 // Default index for highlighting the first slice
+
     private let authToken = ""
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
@@ -134,19 +135,24 @@ struct CalculatorView: View {
                     }) {
                         Text("Calculate")
                             .font(.headline)
-                            .padding()
-                            .background(Color.blue)
                             .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
+                    
+                    .padding(EdgeInsets(top: 15, leading: 60, bottom: 15, trailing: 60))
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                }
                     
                     NavigationLink(destination: RingView()) {
-                        Text("Open NetWorth Chart")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                        VStack(alignment: .center, spacing: 4) {
+                            Text("Open Networth Chart")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
+                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
+                        .background(Color.blue)
+                        .cornerRadius(10)
                     }
+
                     
                     Text("Total Liabilities: \(totalLiabilities)")
                         .font(.headline)
