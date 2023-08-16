@@ -9,6 +9,7 @@ import SwiftUI
 import OpenAISwift
 
 struct CalculatorView: View {
+    @State private var creditCardName = ""
     @State private var number1: String = ""
     @State private var number2: String = ""
     @State private var numbers: [[String]] = []
@@ -18,6 +19,39 @@ struct CalculatorView: View {
     private let authToken = ""
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
+    struct RingView: View {
+        let data = [30.0, 40.0, 20.0, 10.0]
+        let colors: [Color] = [.red, .blue, .green, .orange]
+        
+        var body: some View {
+            GeometryReader { geometry in
+                ZStack {
+                    ForEach(0..<data.count, id: \.self) { index in
+                        let startAngle = calculateAngle(for: data[0..<index].reduce(0, +))
+                        let endAngle = calculateAngle(for: data[0...index].reduce(0, +))
+                        Path { path in
+                            let centerX = geometry.size.width / 2
+                            let centerY = geometry.size.height / 4 // Adjust this value to change the vertical position
+                            let radius = min(geometry.size.width, geometry.size.height) / 3
+                            path.move(to: CGPoint(x: centerX, y: centerY))
+                            path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+                        }
+                        .fill(colors[index])
+                    }
+                }
+            }
+        }
+        
+        private func calculateDataTotal() -> Double {
+            return data.reduce(0, +)
+        }
+        
+        private func calculateAngle(for value: Double) -> Angle {
+            let total = calculateDataTotal()
+            return Angle(degrees: value / total * 360)
+        }
+    }
     
     var totalLiabilities: Int {
         var total = 0
@@ -35,106 +69,120 @@ struct CalculatorView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("WlthyWise")
-                .font(.title)
-                .padding()
-            
+        NavigationView {
             VStack {
-                HStack {
-                    TextField("Credit Card 1", text: $number1)
-                        .keyboardType(.numberPad)
-                        .padding()
-                        .onTapGesture {
-                            hideKeyboard()
-                        }
-                    
-                    TextField("APR", text: $number2)
-                        .keyboardType(.numberPad)
-                        .padding()
-                        .onTapGesture {
-                            hideKeyboard()
-                        }
-                }
+                Text("WlthyWise")
+                    .font(.title)
+                    .padding()
                 
-                ForEach(numbers.indices, id: \.self) { row in
+                VStack {
+                    VStack {
+                        
+                        TextField("Credit Card Name", text: $creditCardName)
+                            .padding(3)
+                        
+                        TextField("Credit Balance", text: $number1)
+                            .keyboardType(.numberPad)
+                            .padding(3)
+                            .onTapGesture {
+                                hideKeyboard()
+                            }
+                        
+                        TextField("APR", text: $number2)
+                            .keyboardType(.numberPad)
+                            .padding(3)
+                            .onTapGesture {
+                                hideKeyboard()
+                            }
+                    }
+                    
+                    ForEach(numbers.indices, id: \.self) { row in
+                        HStack {
+                            ForEach(numbers[row].indices, id: \.self) { column in
+                                TextField("Credit Info \(row * 2 + column + 3)", text: $numbers[row][column])
+                                    .keyboardType(.numberPad)
+                                    .padding()
+                                    .onTapGesture {
+                                        hideKeyboard()
+                                    }
+                            }
+                        }
+                    }
+                    
                     HStack {
-                        ForEach(numbers[row].indices, id: \.self) { column in
-                            TextField("Same as above \(row * 2 + column + 3)", text: $numbers[row][column])
-                                .keyboardType(.numberPad)
-                                .padding()
-                                .onTapGesture {
-                                    hideKeyboard()
-                                }
+                        Button(action: {
+                            addNumberField()
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .font(.title)
+                                .foregroundColor(.blue)
                         }
+                        .padding()
+                        
+                        Button(action: {
+                            removeNumberField()
+                        }) {
+                            Image(systemName: "minus.circle")
+                                .font(.title)
+                                .foregroundColor(.red)
+                        }
+                        .padding()
                     }
-                }
-                
-                HStack {
-                    Button(action: {
-                        addNumberField()
-                    }) {
-                        Image(systemName: "plus.circle")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                    }
-                    .padding()
                     
                     Button(action: {
-                        removeNumberField()
+                        calculateProduct()
                     }) {
-                        Image(systemName: "minus.circle")
-                            .font(.title)
-                            .foregroundColor(.red)
+                        Text("Calculate")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
-                    .padding()
-                }
-                
-                Button(action: {
-                    calculateProduct()
-                }) {
-                    Text("Calculate")
+                    
+                    NavigationLink(destination: RingView()) {
+                        Text("Open NetWorth Chart")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                    
+                    Text("Total Liabilities: \(totalLiabilities)")
                         .font(.headline)
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                
-                Text("Total Liabilities: \(totalLiabilities)")
-                    .font(.headline)
+                    
+                    ScrollView{
+                        Text("How Long Pay Off: \(result)")
+                            .font(.title)
+                            .padding()
+                    }
+                    
+                    Toggle(isOn: $isDarkMode) {
+                        Text("Dark Mode Setting")
+                    }
                     .padding()
-                
-                ScrollView{
-                    Text("How Long Pay Off: \(result)")
-                        .font(.title)
-                        .padding()
-                }
-                
-                Toggle(isOn: $isDarkMode) {
-                    Text("Dark Mode Setting")
                 }
                 .padding()
-            }
-            .padding()
-            .preferredColorScheme(isDarkMode ? .dark : .light)
-            .onTapGesture {
-                hideKeyboard()
-            }
-            .onAppear {
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { _ in
-                    isKeyboardVisible = true
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+                .onTapGesture {
+                    hideKeyboard()
                 }
-                
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
-                    isKeyboardVisible = false
+                .onAppear {
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { _ in
+                        isKeyboardVisible = true
+                    }
+                    
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                        isKeyboardVisible = false
+                    }
                 }
             }
         }
     }
     
     func addNumberField() {
-        numbers.append(["", ""])
+        numbers.append(["", "", ""])
     }
     
     func removeNumberField() {
