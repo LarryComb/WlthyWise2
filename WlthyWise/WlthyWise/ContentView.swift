@@ -33,7 +33,7 @@ struct CalculatorView: View {
                         let endAngle = calculateAngle(for: data[0...index].reduce(0, +))
                         Path { path in
                             let centerX = geometry.size.width / 2
-                            let centerY = geometry.size.height / 4 // Adjust this value to change the vertical position
+                            let centerY = geometry.size.height / 4 // Adjust value to change the vertical position
                             let radius = min(geometry.size.width, geometry.size.height) / 3
                             path.move(to: CGPoint(x: centerX, y: centerY))
                             path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
