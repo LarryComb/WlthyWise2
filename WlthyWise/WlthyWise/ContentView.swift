@@ -22,9 +22,14 @@ struct CalculatorView: View {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
     struct RingView: View {
+        //@Binding var creditBalance: Double // Binding to the user-entered Credit Balance
         let data = [30.0, 40.0, 20.0, 10.0]
         let colors: [Color] = [.red, .blue, .green, .orange]
-        
+       /*
+        var number1Double: Double {
+                return Double(number1) ?? 0
+            }
+        */
         var body: some View {
             GeometryReader { geometry in
                 ZStack {
@@ -144,6 +149,7 @@ struct CalculatorView: View {
                     
                     NavigationLink(destination: RingView()) {
                         VStack(alignment: .center, spacing: 4) {
+                           // RingView(creditBalance: $number1Double) // Bind the credit balance value
                             Text("Open Networth Chart")
                                 .font(.headline)
                                 .foregroundColor(.white)
