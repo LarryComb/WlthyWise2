@@ -14,12 +14,21 @@ struct CalculatorView: View {
     @State private var number2: String = ""
     @State private var numbers: [[String]] = []
     @State private var result: String = ""
+    @State private var refreshView = false // Add this property
+    @State private var creditCardData: [CreditCardData] = []
     @State private var isKeyboardVisible: Bool = false
     @State private var highlightedSliceIndex: Int = 1 // Default index for highlighting the first slice
 
     private let authToken = ""
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
+    struct CreditCardData {
+        let balance: Double
+        let color: Color
+    }
+
+    
     
     
     
@@ -28,13 +37,32 @@ struct CalculatorView: View {
         let colors: [Color] // Colors for each slice
         let data: [Double] // Data for the pie chart
 
+        init(data: [CreditCardData], creditBalance: Double) {
+            self.data = data.map { $0.balance }
+            self.colors = data.map { $0.color }
+            self.creditBalance = creditBalance
+        }
+
+      
+
+    
+    /*
+    struct RingView: View {
+        let creditBalance: Double // Credit Card Balance
+        let colors: [Color] // Colors for each slice
+        let data: [Double] // Data for the pie chart
+
+        
+        
+        
         init(creditBalance: Double, data: [Double], colors: [Color]) {
             self.creditBalance = creditBalance
             self.colors = colors
             self.data = data
-        }
+        }*/
 
-
+        
+        
         var body: some View {
             GeometryReader { geometry in
                 ZStack {
@@ -53,6 +81,27 @@ struct CalculatorView: View {
                 }
             }
         }
+
+        
+/*
+        var body: some View {
+            GeometryReader { geometry in
+                ZStack {
+                    ForEach(0..<data.count, id: \.self) { index in
+                        let startAngle = calculateAngle(for: data[0..<index].reduce(0, +))
+                        let endAngle = calculateAngle(for: data[0...index].reduce(0, +))
+                        Path { path in
+                            let centerX = geometry.size.width / 2
+                            let centerY = geometry.size.height / 4 // Adjust value to change the vertical position
+                            let radius = min(geometry.size.width, geometry.size.height) / 3
+                            path.move(to: CGPoint(x: centerX, y: centerY))
+                            path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+                        }
+                        .fill(colors[index])
+                    }
+                }
+            }
+        }*/
 
         
         private func calculateDataTotal() -> Double {
@@ -154,7 +203,8 @@ struct CalculatorView: View {
                 }
                     
                     
-                    NavigationLink(destination: RingView(creditBalance: Double(number1) ?? 0, data: [Double(number1) ?? 0, 100 - (Double(number1) ?? 0)], colors: [.red, .blue])) {
+                    //NavigationLink(destination: RingView(creditBalance: Double(number1) ?? 0, data: [Double(number1) ?? 0, 100 - (Double(number1) ?? 0)], colors: [.red, .blue])) {
+                    NavigationLink(destination: RingView(data: creditCardData, creditBalance: Double(number1) ?? 0)) {
                         VStack(alignment: .center, spacing: 4) {
                             Text("Open Networth Chart")
                                 .font(.headline)
@@ -199,9 +249,24 @@ struct CalculatorView: View {
         }
     }
     
+    
+    
+    func addCreditCardData() {
+        let colors: [Color] = [.blue, .red, .green, .orange] // Add more colors as needed
+        let colorIndex = creditCardData.count % colors.count // Rotate through colors
+
+        creditCardData.append(CreditCardData(balance: Double(number1) ?? 0, color: colors[colorIndex]))
+        refreshView.toggle() // Toggle the property to refresh the view
+    }
+
+
+
     func addNumberField() {
         numbers.append(["", "", ""])
+        addCreditCardData() // Call the function to add credit card data
     }
+
+
     
     func removeNumberField() {
         if !numbers.isEmpty {
