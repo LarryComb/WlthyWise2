@@ -21,15 +21,20 @@ struct CalculatorView: View {
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
+    
+    
     struct RingView: View {
-        //@Binding var creditBalance: Double // Binding to the user-entered Credit Balance
-        let data = [30.0, 40.0, 20.0, 10.0]
-        let colors: [Color] = [.red, .blue, .green, .orange]
-       /*
-        var number1Double: Double {
-                return Double(number1) ?? 0
-            }
-        */
+        let creditBalance: Double // Credit Card Balance
+        let colors: [Color] // Colors for each slice
+        let data: [Double] // Data for the pie chart
+
+        init(creditBalance: Double, data: [Double], colors: [Color]) {
+            self.creditBalance = creditBalance
+            self.colors = colors
+            self.data = data
+        }
+
+
         var body: some View {
             GeometryReader { geometry in
                 ZStack {
@@ -48,6 +53,7 @@ struct CalculatorView: View {
                 }
             }
         }
+
         
         private func calculateDataTotal() -> Double {
             return data.reduce(0, +)
@@ -147,9 +153,9 @@ struct CalculatorView: View {
                     .cornerRadius(10)
                 }
                     
-                    NavigationLink(destination: RingView()) {
+                    
+                    NavigationLink(destination: RingView(creditBalance: Double(number1) ?? 0, data: [Double(number1) ?? 0, 100 - (Double(number1) ?? 0)], colors: [.red, .blue])) {
                         VStack(alignment: .center, spacing: 4) {
-                           // RingView(creditBalance: $number1Double) // Bind the credit balance value
                             Text("Open Networth Chart")
                                 .font(.headline)
                                 .foregroundColor(.white)
