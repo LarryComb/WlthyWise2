@@ -218,7 +218,7 @@ struct CalculatorView: View {
     
     
     func addCreditCardData() {
-        let colors: [Color] = [.blue, .red, .green, .orange] // Add more colors as needed
+        let colors: [Color] = [.blue, .red, .green, .orange, .teal, .pink, .purple, .yellow, .indigo, .mint, .cyan] // Add more colors as needed
         let colorIndex = creditCardData.count % colors.count // Rotate through colors
 
         creditCardData.append(CreditCardData(balance: Double(number1) ?? 0, color: colors[colorIndex]))
