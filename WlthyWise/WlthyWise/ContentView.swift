@@ -45,22 +45,7 @@ struct CalculatorView: View {
 
       
 
-    
-    /*
-    struct RingView: View {
-        let creditBalance: Double // Credit Card Balance
-        let colors: [Color] // Colors for each slice
-        let data: [Double] // Data for the pie chart
-
-        
-        
-        
-        init(creditBalance: Double, data: [Double], colors: [Color]) {
-            self.creditBalance = creditBalance
-            self.colors = colors
-            self.data = data
-        }*/
-
+   
         
         
         var body: some View {
@@ -83,25 +68,6 @@ struct CalculatorView: View {
         }
 
         
-/*
-        var body: some View {
-            GeometryReader { geometry in
-                ZStack {
-                    ForEach(0..<data.count, id: \.self) { index in
-                        let startAngle = calculateAngle(for: data[0..<index].reduce(0, +))
-                        let endAngle = calculateAngle(for: data[0...index].reduce(0, +))
-                        Path { path in
-                            let centerX = geometry.size.width / 2
-                            let centerY = geometry.size.height / 4 // Adjust value to change the vertical position
-                            let radius = min(geometry.size.width, geometry.size.height) / 3
-                            path.move(to: CGPoint(x: centerX, y: centerY))
-                            path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
-                        }
-                        .fill(colors[index])
-                    }
-                }
-            }
-        }*/
 
         
         private func calculateDataTotal() -> Double {
@@ -203,7 +169,7 @@ struct CalculatorView: View {
                 }
                     
                     
-                    //NavigationLink(destination: RingView(creditBalance: Double(number1) ?? 0, data: [Double(number1) ?? 0, 100 - (Double(number1) ?? 0)], colors: [.red, .blue])) {
+                    
                     NavigationLink(destination: RingView(data: creditCardData, creditBalance: Double(number1) ?? 0)) {
                         VStack(alignment: .center, spacing: 4) {
                             Text("Open Networth Chart")
