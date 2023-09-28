@@ -29,9 +29,6 @@ struct CalculatorView: View {
     }
 
     
-    
-    
-    
     struct RingView: View {
         let creditBalance: Double // Credit Card Balance
         let colors: [Color] // Colors for each slice
@@ -43,11 +40,6 @@ struct CalculatorView: View {
             self.creditBalance = creditBalance
         }
 
-      
-
-   
-        
-        
         var body: some View {
             GeometryReader { geometry in
                 ZStack {
@@ -55,9 +47,9 @@ struct CalculatorView: View {
                         let startAngle = calculateAngle(for: data[0..<index].reduce(0, +))
                         let endAngle = calculateAngle(for: data[0...index].reduce(0, +))
                         Path { path in
-                            let centerX = geometry.size.width / 2
+                            let centerX = geometry.size.width / 2  // Adjust value to change the horizontal position
                             let centerY = geometry.size.height / 4 // Adjust value to change the vertical position
-                            let radius = min(geometry.size.width, geometry.size.height) / 3
+                            let radius = min(geometry.size.width, geometry.size.height) / 3  // Adjust value to change size from center
                             path.move(to: CGPoint(x: centerX, y: centerY))
                             path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
                         }
@@ -66,8 +58,6 @@ struct CalculatorView: View {
                 }
             }
         }
-
-        
 
         
         private func calculateDataTotal() -> Double {
@@ -104,7 +94,6 @@ struct CalculatorView: View {
                 
                 VStack {
                     VStack {
-                        
                         TextField("Credit Card Name", text: $creditCardName)
                             .padding(3)
                         
@@ -247,7 +236,7 @@ struct CalculatorView: View {
             product *= num1 * num2
         }
         
-        let calculation = "If \(number1) is the amount of my credit card balance and \(number2)% is my interest rate of the same credit card and I am making the mminimum payments, how long will it take me to pay off the card? Also say something encouring"
+        let calculation = "If \(number1) is the amount of my credit card balance and \(number2)% is my interest rate of the same credit card and I am making the minimum payments, how long will it take me to pay off the card? Also say something encouring"
         let client = OpenAISwift(authToken: authToken)
         
         client.sendCompletion(with: calculation, maxTokens: 50) { result in
