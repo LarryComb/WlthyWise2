@@ -92,6 +92,7 @@ struct CalculatorView: View {
                     .font(.title)
                     .padding()
                 
+                
                 VStack {
                     VStack {
                         TextField("Credit Card Name", text: $creditCardName)
@@ -103,6 +104,7 @@ struct CalculatorView: View {
                             .onTapGesture {
                                 hideKeyboard()
                             }
+                        
                         
                         TextField("APR", text: $number2)
                             .keyboardType(.numberPad)
@@ -202,7 +204,12 @@ struct CalculatorView: View {
                 }
             }
         }
+        .onTapGesture {
+          UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
+    
+    
     
     
     
@@ -236,10 +243,10 @@ struct CalculatorView: View {
             product *= num1 * num2
         }
         
-        let calculation = "If \(number1) is the amount of my credit card balance and \(number2)% is my interest rate of the same credit card and I am making the minimum payments, how long will it take me to pay off the card? Also say something encouring"
+        let calculation = "If \(number1) is the amount of my credit card balance and \(number2)% is my interest rate of the same credit card and I am making the minimum payments, how long will it take me to pay off the card? Then add how much time they could save by adding an extra $20 to the payments per month."
         let client = OpenAISwift(authToken: authToken)
         
-        client.sendCompletion(with: calculation, maxTokens: 50) { result in
+        client.sendCompletion(with: calculation, maxTokens: 100) { result in
             switch result {
             case .success(let model):
                 let response = model.choices?.first?.text ?? ""
