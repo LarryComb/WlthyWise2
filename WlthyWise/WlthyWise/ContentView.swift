@@ -97,10 +97,22 @@ struct CalculatorView: View {
                     VStack {
                         TextField("Credit Card Name", text: $creditCardName)
                             .padding(3)
+                            .frame(minWidth: 0, maxWidth: 200)
+                            .frame(height: 35)
+                            .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.blue, lineWidth: 3) // Customize the color and line width as needed
+                                )
                         
                         TextField("Credit Balance", text: $number1)
                             .keyboardType(.numberPad)
                             .padding(3)
+                            .frame(minWidth: 0, maxWidth: 200)
+                            .frame(height: 35)
+                            .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.blue, lineWidth: 3) // Customize the color and line width as needed
+                                )
                             .onTapGesture {
                                 hideKeyboard()
                             }
@@ -109,6 +121,12 @@ struct CalculatorView: View {
                         TextField("APR", text: $number2)
                             .keyboardType(.numberPad)
                             .padding(3)
+                            .frame(minWidth: 0, maxWidth: 200)
+                            .frame(height: 35)
+                            .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.blue, lineWidth: 3) // Customize the color and line width as needed
+                                )
                             .onTapGesture {
                                 hideKeyboard()
                             }
@@ -203,10 +221,11 @@ struct CalculatorView: View {
                     }
                 }
             }
+            
         }
-        .onTapGesture {
+        /*.onTapGesture {   //this works for the tap but then cancels out the navigationView
           UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+        }*/
     }
     
     
