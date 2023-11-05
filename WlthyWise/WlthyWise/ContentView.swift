@@ -19,7 +19,7 @@ struct CalculatorView: View {
     @State private var isKeyboardVisible: Bool = false
     @State private var highlightedSliceIndex: Int = 1 // Default index for highlighting the first slice
 
-    private let authToken = ""
+    private let authToken = "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"
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
