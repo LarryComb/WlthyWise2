@@ -23,6 +23,7 @@ struct CalculatorView: View {
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
+    
     struct CreditCardData {
         let balance: Double
         let color: Color
@@ -57,6 +58,7 @@ struct CalculatorView: View {
                     }
                 }
             }
+            
         }
 
         
@@ -91,6 +93,7 @@ struct CalculatorView: View {
                 Text("WlthyWise")
                     .font(.title)
                     .padding()
+                ShareLink(item: "String Item")
                 
                 
                 VStack {
